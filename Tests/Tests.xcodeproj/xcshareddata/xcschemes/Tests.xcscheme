@@ -28,7 +28,7 @@
             buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C134CB7D1C3CB65600215143"
+               BlueprintIdentifier = "C1E3DF5E1E59F77600B67F56"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
                ReferencedContainer = "container:Tests.xcodeproj">
@@ -40,14 +40,13 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
-      shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C134CB7D1C3CB65600215143"
+               BlueprintIdentifier = "C1E3DF5E1E59F77600B67F56"
                BuildableName = "Tests.xctest"
                BlueprintName = "Tests"
                ReferencedContainer = "container:Tests.xcodeproj">
@@ -57,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "C134CB7D1C3CB65600215143"
+            BlueprintIdentifier = "C1E3DF5E1E59F77600B67F56"
             BuildableName = "Tests.xctest"
             BlueprintName = "Tests"
             ReferencedContainer = "container:Tests.xcodeproj">
