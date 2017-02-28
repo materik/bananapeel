@@ -3,15 +3,26 @@ import XCTest
 
 public class Banana {
 
-    public static func launch() -> BananaPeel {
-        let app = XCUIApplication()
-        app.launch()
-        return BananaPeel(app: app)
+    private var launchEnvironment: LaunchEnvironment = LaunchEnvironment()
+    
+    public init() {
+        // Do nothing...
     }
     
-    public static func launch<T: BananaPeel>(on peel: T.Type) -> T {
+    public func addLaunchEnvironment(key: String, value: String) -> Self {
+        self.launchEnvironment.add(key: key, value: value)
+        return self
+    }
+    
+    public func peel() -> BananaPeel {
+        return self.peel(on: BananaPeel.self)
+    }
+    
+    public func peel<T: BananaPeel>(on peel: T.Type) -> T {
         let app = XCUIApplication()
+        app.launchEnvironment = self.launchEnvironment.dictionary
         app.launch()
+        
         return T.init(app: app)
     }
 
