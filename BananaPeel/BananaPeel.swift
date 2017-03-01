@@ -6,7 +6,7 @@ open class BananaPeel {
     public typealias VoidClosure = (XCUIApplication) -> ()
     public typealias ElementClosure = (XCUIApplication) -> (XCUIElement)
     
-    internal var app: XCUIApplication
+    private let app: XCUIApplication
     
     public required init(app: XCUIApplication) {
         self.app = app
