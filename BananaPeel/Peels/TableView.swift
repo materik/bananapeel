@@ -1,13 +1,13 @@
 
 import XCTest
 
-public protocol TablePeel {
+public protocol TableViewPeel {
     
     func assert(numberOfCells: UInt) -> Self
     
 }
 
-extension TablePeel where Self: BananaPeel {
+extension TableViewPeel where Self: BananaPeel {
     
     public func assert(numberOfCells: UInt) -> Self {
         return assert {
