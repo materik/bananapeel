@@ -1,6 +1,6 @@
 {
   "name": "BananaPeel",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "homepage": "https://github.com/materik/bananapeel.git",
   "summary": "XCode UI testing wrapper",
   "license": {
@@ -15,7 +15,7 @@
   },
   "source": {
     "git": "https://github.com/materik/bananapeel.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "source_files": "BananaPeel/**/*.swift",
   "exclude_files": [
