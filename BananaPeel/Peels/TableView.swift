@@ -11,8 +11,8 @@ extension TableViewPeel where Self: BananaPeel {
     
     public func assert(numberOfCells: UInt) -> Self {
         return assert {
-            let cells = $0.tables.cells
-            XCTAssertEqual(cells.count, numberOfCells)
+            print($0.debugDescription)
+            XCTAssertEqual($0.tables.cells.count, numberOfCells)
         }
     }
     

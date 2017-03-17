@@ -3,18 +3,16 @@ import XCTest
 
 public protocol NavigationBarPeel {
     
-    func assert(navigationBarTitle title: String) -> Self
+    func assert(navigationBarTitle title: String, timeout: TimeInterval) -> Self
     
 }
 
 extension NavigationBarPeel where Self: BananaPeel {
     
-    public func assert(navigationBarTitle title: String) -> Self {
-        return self.assert {
-            XCTAssertTrue(
-                $0.navigationBars[title].exists,
-                "\(String(describing: type(of: self))): Navigation bar title isn't \(title)"
-            )
+    public func assert(navigationBarTitle title: String,
+                       timeout: TimeInterval = TimeInterval.timeout) -> Self {
+        return self.waitUntilVisible(timeout: timeout) {
+            $0.navigationBars[title]
         }
     }
     

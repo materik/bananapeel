@@ -23,6 +23,11 @@ open class BananaPeel {
         return self
     }
     
+    public func assert(closure: VoidClosure) -> Self {
+        closure(self.app)
+        return self
+    }
+    
     public func enter(text: String, into element: ElementClosure) -> Self {
         tap(element: element).peelOff()
         element(self.app).typeText(text)
@@ -54,8 +59,20 @@ open class BananaPeel {
         return self
     }
     
-    public func assert(closure: VoidClosure) -> Self {
-        closure(self.app)
+    public func wait(_ time: UInt32 = 1) -> Self {
+        sleep(time)
+        return self
+    }
+    
+    public func waitUntilVisible(timeout: TimeInterval = TimeInterval.timeout,
+                                 element: ElementClosure) -> Self {
+        element(self.app).waitUntilVisible()
+        return self
+    }
+    
+    public func waitUntilNotVisible(timeout: TimeInterval = TimeInterval.timeout,
+                                    element: ElementClosure) -> Self {
+        element(self.app).waitUntilNotVisible()
         return self
     }
     
