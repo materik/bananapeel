@@ -6,11 +6,31 @@
 ![](https://img.shields.io/cocoapods/p/BananaPeel.svg?style=flat-square)
 ![](https://img.shields.io/cocoapods/l/BananaPeel.svg?style=flat-square)
 
-XCode UI testing wrapper
+Contextual XCode UI testing framework
 
 ## Install
 
 ```bash
 pod 'BananaPeel'
+```
+
+## Example
+
+```swift
+func test() {
+    Banana()
+        .addLaunchEnvironment(key: "isTesting", value: "true")
+        .peel()
+        .assert {
+            XCTAssertTrue($0.navigationBars["My App"].exists)
+        }
+        .tap {
+            $0.tabBars.buttons["Tab 2"]
+        }
+        .assert {
+            XCTAssertTrue($0.navigationBars["Settings"].exists)
+        }
+        .peelOff()
+}
 ```
 
