@@ -6,11 +6,12 @@ open class BananaPeel {
     public typealias VoidClosure = (XCUIApplication) -> ()
     public typealias ElementClosure = (XCUIApplication) -> (XCUIElement)
     
-    private let app: XCUIApplication
+    private var app: XCUIApplication {
+        return XCUIApplication()
+    }
     
-    public required init(app: XCUIApplication) {
-        self.app = app
-        self.viewDidAppear().peelOff()
+    public required init() {
+        _ = self.viewDidAppear()
     }
     
     open func viewDidAppear() -> Self {
@@ -29,7 +30,7 @@ open class BananaPeel {
     }
     
     public func enter(text: String, into element: ElementClosure) -> Self {
-        tap(element: element).peelOff()
+        _ = tap(element: element)
         element(self.app).typeText(text)
         return self
     }
@@ -77,12 +78,12 @@ open class BananaPeel {
     }
     
     public func peel<T: BananaPeel>(on peel: T.Type) -> T {
-        self.viewWillDisappear().peelOff()
-        return peel.init(app: self.app)
+        _ = self.viewWillDisappear()
+        return peel.init()
     }
     
     public func peelOff() {
-        // Do nothing...
+        self.app.terminate()
     }
     
 }

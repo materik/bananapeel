@@ -23,7 +23,9 @@ public class Banana {
         app.launchEnvironment = self.launchEnvironment.dictionary
         app.launch()
         
-        return T.init(app: app)
+        print("BananaPeel: Launch (\(self.launchEnvironment.dictionary))")
+        
+        return T.init()
     }
 
 }
