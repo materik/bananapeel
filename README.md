@@ -16,8 +16,7 @@ pod 'BananaPeel'
 
 ## Usage
 
-Read more about the general idea of the framework on my blog
-(http://materik.tumblr.com).
+Read more about the general idea of the framework on my [blog](https://materik.tumblr.com/post/158923623366/contextual-uitesting-in-xcode).
 
 Extend the `BananaPeel` class for every view in you app to create a unique
 context for easier testing and maintainability.
