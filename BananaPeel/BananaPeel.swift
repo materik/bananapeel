@@ -35,9 +35,21 @@ open class BananaPeel {
         return self
     }
     
-    public func tap(element: ElementClosure) -> Self {
-        element(self.app).tap()
-        return self
+    public func `if`<T: BananaPeel, S: BananaPeel>(
+        condition: (XCUIApplication) -> (Bool),
+        onTrue: (T) -> (S),
+        onFalse: (T) -> (S),
+        from: T.Type,
+        to: S.Type
+    ) -> S {
+        guard let this = self as? T else {
+            fatalError()
+        }
+        if condition(self.app) {
+            return onTrue(this)
+        } else {
+            return onFalse(this)
+        }
     }
     
     public func swipeDown(element: ElementClosure) -> Self {
@@ -57,6 +69,11 @@ open class BananaPeel {
     
     public func swipeUp(element: ElementClosure) -> Self {
         element(self.app).swipeUp()
+        return self
+    }
+    
+    public func tap(element: ElementClosure) -> Self {
+        element(self.app).tap()
         return self
     }
     
